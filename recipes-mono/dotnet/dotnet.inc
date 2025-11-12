@@ -18,10 +18,10 @@ SRC_ARCH:aarch64 = "arm64"
 SRC_ARCH:arm = "arm"
 SRC_ARCH:x86-64 = "x64"
 
-SRC_URI[vardeps] += "SRC_FETCH_ID SRC_ARCH"
+SRC_URI[vardeps] += "SRC_ARCH"
 SRC_URI[sha512sum] = "${SRC_SHA512SUM}"
 
-SRC_URI = "https://download.visualstudio.microsoft.com/download/pr/${SRC_FETCH_ID}/dotnet-sdk-${PV}-linux-${SRC_ARCH}.tar.gz;subdir=dotnet-${PV}"
+SRC_URI = "https://builds.dotnet.microsoft.com/dotnet/Sdk/${PV}/dotnet-sdk-${PV}-linux-${SRC_ARCH}.tar.gz;subdir=dotnet-${PV}"
 
 do_configure[noexec] = "1"
 do_compile[noexec] = "1"
